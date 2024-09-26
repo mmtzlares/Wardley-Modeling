@@ -1,2 +1,2 @@
 # Wardley Modeling
-Ways of modeling Wardley Maps. 
+This repository is dedicated to modeling and analyzing Wardley maps using both Neo4j and TypeDB. Wardley maps are a strategic visualization tool that helps organizations understand their environment, value chains, and the evolutionary stage of their components. However, traditional Wardley maps focus on visual representation and lack the deeper analytical capabilities provided by modern graph databases.

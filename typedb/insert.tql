@@ -1,11 +1,42 @@
-insert
-    $customer isa user, has name "Customer", has evolution 0.45, has visibility 1;
-    $online_image_manipulation isa build, has name "Online Image Manipulation", has evolution 0.98, has visibility 0.34;
-    $online_photo_storage isa build, has name "Online Photo Storage", has evolution 0.37, has visibility 0.91;
-    $print isa buy, has name "Print", has evolution 0.6, has visibility 0.88;
-    $web_site isa buy, has name "Web Site", has evolution 0.65, has visibility 0.82;
-    $crm isa buy, has name "CRM", has evolution 0.68, has visibility 0.68;
-    $platform isa buy, has name "Platform", has evolution 0.58, has visibility 0.5;
-    $compute isa buy, has name "Compute", has evolution 0.69, has visibility 0.35;
-    $data_centre isa buy, has name "Data Centre", has evolution 0.58, has visibility 0.15;
-    $power isa buy, has name "Power", has evolution 0.9, has visibility 0.1;
+insert 
+    $anchor isa anchor, 
+        has name "User", 
+        has evolution 0.45, 
+        has visibility 1; 
+    $component-1 isa component, 
+        has name "Print", 
+        has evolution 0.6, 
+        has visibility 0.88;
+    $component-2 isa component, 
+        has name "Online Image Manipulation", 
+        has evolution 0.98, 
+        has visibility 0.34;
+    $component-3 isa component, 
+        has name "Online Photo Storage", 
+        has evolution 0.37, 
+        has visibility 0.91;
+    $component-4 isa component, 
+        has name "Web Site", 
+        has evolution 0.65, 
+        has visibility 0.82;
+    $component-5 isa component,
+        has name "Platform",
+        has evolution 0.58,
+        has visibility 0.5;
+    $component-6 isa component,
+        has name "CRM",
+        has evolution 0.68,
+        has visibility 0.68;
+    $component-7 isa component,
+        has name "Compute",
+        has evolution 0.69,
+        has visibility 0.35;
+    $component-8 isa component,
+        has name "Data Center",
+        has evolution 0.58,
+        has visibility 0.15;
+    $component-9 isa component,
+        has name "Power",
+        has evolution 0.9,
+        has visibility 0.1;            
+    

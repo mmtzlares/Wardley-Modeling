@@ -1,0 +1,4 @@
+match
+    $x isa component, has name $name, has evolution $evolution, has visibility $visibility;
+    $y isa anchor, has name $anchor_name, has evolution $anchor_evolution, has visibility $anchor_visibility;
+get $x, $name, $evolution, $visibility, $y, $anchor_name, $anchor_evolution, $anchor_visibility;

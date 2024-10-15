@@ -1,0 +1,5 @@
+match
+    $building (builder: $component_built_by, built: $component_built) isa builds;
+    $component_built_by isa component, has name $built_by_name;
+    $component_built isa component, has name $built_name;
+get $building, $built_by_name, $built_name;

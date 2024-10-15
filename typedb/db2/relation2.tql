@@ -1,0 +1,36 @@
+match
+  # Matching existing components by their name
+  $component-1 isa component, has name "Online Image Manipulation";
+  $component-2 isa component, has name "Online Photo Storage";
+  $component-3 isa component, has name "Print";
+  $component-4 isa component, has name "Web Site";
+  $component-5 isa component, has name "CRM";
+  $component-6 isa component, has name "Platform";
+  $component-7 isa component, has name "Compute";
+  $component-8 isa component, has name "Data Center";
+  $component-9 isa component, has name "Power";
+  
+  # Matching the anchor (user)
+  $anchor isa anchor, has name "User";
+
+insert
+  # Relations: Builds (relations between components)
+  $build-1 (builder: $component-1, built: $component-2) isa builds;  # Online Image Manipulation builds Online Photo Storage
+
+  # Relations: Buys (anchor buys from components)
+  $buy-1 (buyer: $anchor, seller: $component-3) isa buys;  # User buys Print
+  $buy-2 (buyer: $anchor, seller: $component-4) isa buys;  # User buys Web Site
+  $buy-3 (buyer: $anchor, seller: $component-5) isa buys;  # User buys CRM
+  $buy-4 (buyer: $anchor, seller: $component-6) isa buys;  # User buys Platform
+  $buy-5 (buyer: $anchor, seller: $component-7) isa buys;  # User buys Compute
+  $buy-6 (buyer: $anchor, seller: $component-8) isa buys;  # User buys Data Center
+
+  # Relations: Component Buys (between components)
+  $buy-7 (buyer: $component-1, seller: $component-3) isa buys;  # Online Image Manipulation buys Print
+  $buy-8 (buyer: $component-2, seller: $component-4) isa buys;  # Online Photo Storage buys Web Site
+
+  # Relations: Outsources (anchor outsources Power)
+  $outsource-1 (outsourcer: $anchor, outsourced: $component-9) isa outsources;
+
+  # Relations: Component Outsources (between components)
+  $outsource-2 (outsourcer: $component-7, outsourced: $component-9) isa outsources;  # Compute outsources Power

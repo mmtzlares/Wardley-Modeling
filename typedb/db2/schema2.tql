@@ -4,6 +4,7 @@ define
         owns name,
         owns evolution,
         owns visibility,
+        owns provider,
         plays buys:buyer,
         plays buys:seller,
         plays builds:builder,
@@ -16,6 +17,7 @@ define
         owns evolution,
         owns visibility,
         owns resource,
+        owns provider,
         plays buys:buyer,
         plays buys:seller,
         plays builds:builder,
@@ -36,10 +38,12 @@ define
     # Relation: 'outsources'
     outsources sub relation,
         relates outsourcer,   
-        relates outsourced;   
+        relates outsourced;  
 
     # Attributes
     name sub attribute, value string;
     evolution sub attribute, value double;
     visibility sub attribute, value double;
     resource sub attribute, value string;
+    provider sub attribute, value string;
+

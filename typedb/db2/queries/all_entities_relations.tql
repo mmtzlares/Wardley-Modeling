@@ -1,0 +1,4 @@
+match
+  $entity isa entity, has name $name;           # Matches all entities (anchor and component) and their names
+  $relation (role: $entity) isa relation;       # Matches all relations that involve these entities
+get $entity, $name, $relation;

@@ -1,36 +1,70 @@
 match
-  # Matching existing components by their name
-  $component-1 isa component, has name "Online Image Manipulation";
-  $component-2 isa component, has name "Online Photo Storage";
-  $component-3 isa component, has name "Print";
-  $component-4 isa component, has name "Web Site";
-  $component-5 isa component, has name "CRM";
-  $component-6 isa component, has name "Platform";
-  $component-7 isa component, has name "Compute";
-  $component-8 isa component, has name "Data Center";
-  $component-9 isa component, has name "Power";
+  # Matching existing components by their name, evolution, visibility, and provider
+  $anchor isa anchor, 
+    has name "User", 
+    has evolution 0.45, 
+    has visibility 1, 
+    has provider "Provider";  # Matching User anchor
   
-  # Matching the anchor (user)
-  $anchor isa anchor, has name "User";
-
+  $component-1 isa component, 
+    has name "Print", 
+    has evolution 0.6, 
+    has visibility 0.88, 
+    has provider "Provider";  # Matching Print
+  $component-2 isa component, 
+    has name "Online Image Manipulation", 
+    has evolution 0.98, 
+    has visibility 0.34, 
+    has provider "Provider";  # Matching Online Image Manipulation
+  $component-3 isa component, 
+    has name "Online Photo Storage", 
+    has evolution 0.37, 
+    has visibility 0.91, 
+    has provider "Provider";  # Matching Online Photo Storage
+  $component-4 isa component, 
+    has name "Web Site", 
+    has evolution 0.65, 
+    has visibility 0.82, 
+    has provider "Provider";  # Matching Web Site
+  $component-5 isa component, 
+    has name "Platform", 
+    has evolution 0.58, 
+    has visibility 0.5, 
+    has provider "Provider";  # Matching Platform
+  $component-6 isa component, 
+    has name "CRM", 
+    has evolution 0.68, 
+    has visibility 0.68, 
+    has provider "Provider";  # Matching CRM
+  $component-7 isa component, 
+    has name "Compute", 
+    has evolution 0.69, 
+    has visibility 0.35, 
+    has provider "Provider";  # Matching Compute
+  $component-8 isa component, 
+    has name "Data Center", 
+    has evolution 0.58, 
+    has visibility 0.15, 
+    has provider "Provider";  # Matching Data Center
+  $component-9 isa component, 
+    has name "Power", 
+    has evolution 0.9, 
+    has visibility 0.1, 
+    has provider "Provider";  # Matching Power
+  
 insert
-  # Relations: Builds (relations between components)
-  $build-1 (builder: $component-1, built: $component-2) isa builds;  # Online Image Manipulation builds Online Photo Storage
+  # Updated Builds Relations where User builds Online Image Manipulation and Online Photo Storage
+  $build-1 (builder: $anchor, built: $component-2) isa builds;  # User builds Online Image Manipulation
+  $build-2 (builder: $anchor, built: $component-3) isa builds;  # User builds Online Photo Storage
 
-  # Relations: Buys (anchor buys from components)
-  $buy-1 (buyer: $anchor, seller: $component-3) isa buys;  # User buys Print
-  $buy-2 (buyer: $anchor, seller: $component-4) isa buys;  # User buys Web Site
-  $buy-3 (buyer: $anchor, seller: $component-5) isa buys;  # User buys CRM
-  $buy-4 (buyer: $anchor, seller: $component-6) isa buys;  # User buys Platform
-  $buy-5 (buyer: $anchor, seller: $component-7) isa buys;  # User buys Compute
-  $buy-6 (buyer: $anchor, seller: $component-8) isa buys;  # User buys Data Center
-
-  # Relations: Component Buys (between components)
-  $buy-7 (buyer: $component-1, seller: $component-3) isa buys;  # Online Image Manipulation buys Print
-  $buy-8 (buyer: $component-2, seller: $component-4) isa buys;  # Online Photo Storage buys Web Site
-
-  # Relations: Outsources (anchor outsources Power)
-  $outsource-1 (outsourcer: $anchor, outsourced: $component-9) isa outsources;
-
-  # Relations: Component Outsources (between components)
-  $outsource-2 (outsourcer: $component-7, outsourced: $component-9) isa outsources;  # Compute outsources Power
+  # Buys Relations (components that are bought by either the User or other components)
+  $buy-1 (buyer: $anchor, seller: $component-1) isa buys;       # User buys Print
+  $buy-2 (buyer: $anchor, seller: $component-4) isa buys;       # User buys Web Site
+  $buy-3 (buyer: $component-4, seller: $component-6) isa buys;  # Web Site buys CRM
+  $buy-4 (buyer: $component-4, seller: $component-5) isa buys;  # Web Site buys Platform
+  $buy-5 (buyer: $component-5, seller: $component-7) isa buys;  # Platform buys Compute
+  $buy-6 (buyer: $component-7, seller: $component-8) isa buys;  # Compute buys Data Center
+  
+  # Outsources Relations
+  $outsource-1 (outsourcer: $component-7, outsourced: $component-9) isa outsources;  # Compute outsources Power
+  $outsource-2 (outsourcer: $component-8, outsourced: $component-9) isa outsources;  # Data Center outsources Power

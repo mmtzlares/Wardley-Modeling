@@ -2,51 +2,50 @@ insert
     $anchor isa anchor, 
         has name "User", 
         has evolution 0.45, 
-        has visibility 1;
-		has provider "Provider";
+        has visibility 1,
+        has provider "Provider";
     $component-1 isa component, 
         has name "Print", 
         has evolution 0.6, 
-        has visibility 0.88;
-		has provider "Provider";
+        has visibility 0.88,
+        has provider "Provider";
     $component-2 isa component, 
         has name "Online Image Manipulation", 
         has evolution 0.98, 
-        has visibility 0.34;
-		has provider "Provider";
+        has visibility 0.34,
+        has provider "Provider";
     $component-3 isa component, 
         has name "Online Photo Storage", 
         has evolution 0.37, 
-        has visibility 0.91;
-		has provider "Provider";
+        has visibility 0.91,
+        has provider "Provider";
     $component-4 isa component, 
         has name "Web Site", 
         has evolution 0.65, 
-        has visibility 0.82;
-		has provider "Provider";
+        has visibility 0.82,
+        has provider "Provider";
     $component-5 isa component,
         has name "Platform",
         has evolution 0.58,
-        has visibility 0.5;
-		has provider "Provider";
+        has visibility 0.5,
+        has provider "Provider";
     $component-6 isa component,
         has name "CRM",
         has evolution 0.68,
-        has visibility 0.68;
-		has provider "Provider";
+        has visibility 0.68,
+        has provider "Provider";
     $component-7 isa component,
         has name "Compute",
         has evolution 0.69,
-        has visibility 0.35;
-		has provider "Provider";
+        has visibility 0.35,
+        has provider "Provider";
     $component-8 isa component,
         has name "Data Center",
         has evolution 0.58,
-        has visibility 0.15;
-		has provider "Provider";
+        has visibility 0.15,
+        has provider "Provider";
     $component-9 isa component,
         has name "Power",
         has evolution 0.9,
-        has visibility 0.1;
-		has provider "Provider";           
-    
+        has visibility 0.1,
+        has provider "Provider";

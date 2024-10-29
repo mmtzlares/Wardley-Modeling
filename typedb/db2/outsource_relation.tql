@@ -1,5 +1,0 @@
-match
-    $outsourcing (outsourcer: $anchor_outsource, outsourced: $component_outsourced) isa outsources;
-    $anchor_outsource isa anchor, has name $anchor_outsource_name;
-    $component_outsourced isa component, has name $outsourced_name;
-get $outsourcing, $anchor_outsource_name, $outsourced_name;

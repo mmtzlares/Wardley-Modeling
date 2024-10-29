@@ -1,5 +1,0 @@
-match
-    $buying (buyer: $anchor, seller: $component) isa buys;
-    $anchor isa anchor, has name $anchor_name;
-    $component isa component, has name $component_name;
-get $buying, $anchor_name, $component_name;
